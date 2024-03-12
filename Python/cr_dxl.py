@@ -31,8 +31,8 @@ class cr_motion:
         self.dxl = dxl_comms(dxl_id)
         self.dxl.com_initialize()
         self.dxl.set_operating_mode(4)      #Setting operation to multi-turn mode.
-        self.dxl.set_profile_velocity(100)  #Currently setting the same profile velocity and accn for all motors.
-        self.dxl.set_profile_acceleration(20) 
+        self.dxl.set_profile_velocity(20)  #Currently setting the same profile velocity and accn for all motors.
+        self.dxl.set_profile_acceleration(5) 
         self.dxl.read_initialize()
         self.dxl.write_initialize()
         self.n_links = len (dxl_id)
@@ -490,6 +490,8 @@ class cr_motion:
         
         listener = keyboard.GlobalHotKeys({'w':self.p_extend,
                                 's':self.p_retract,
+                                't':self.extend,
+                                'g':self.retract,
                                 'a':self.p_pbend1,
                                 '<shift>+a':self.p_nbend1,
                                 'd':self.p_pbend2,

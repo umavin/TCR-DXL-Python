@@ -29,6 +29,6 @@ while 1:
       if getch() == chr(ESC_ASCII_VALUE):
             break
       
-      psec.move_sec(step_size=5.000)
+      psec.move_sec(step_size=2.000)
 
 #psec.dxl.shutdown()
